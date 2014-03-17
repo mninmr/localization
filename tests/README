@@ -1,0 +1,40 @@
+Tests consist of the following:
+control.csv - A file containing a control set for each timestep.
+	A control file is a csv where each line has two values: a degree change (in radians) and a distance traveled (or velocity during that time step, which is equal to distance moved in that time step)
+	Example:
+		0,1
+		pi,1
+measure.csv - A file containing a measurement set for each timestep.
+	A measurement file is a csv where each line has M measusurements and each measurement value is a pair of colon separated values representing the direction and distance for each reading. (M should be consistent per line)
+	Ex:
+	0:1,pi:0.5,pi/3:10
+	0:1,pi:1,pi/3:6
+ground.csv - A file containing the ground truth position of the agent at each timestep (shown in red)
+	T+1 entries
+	Each entry is of the form
+	x,y,phi
+map.pgm - A .pgm format file containing the map for the test.
+	To create:
+	Draw a picture (or pull on off the internet)
+	Use the terminal command convert to:
+	convert <image> <newname>.pgm
+	To create a properly formatted file.
+	Use it.
+	NOTE: The image is inverted in our format, so black areas are made empty space and appear white.
+
+
+NOTE: Test cases may fail to converge to a solution, don't worry if this happens occasionally  (or more on large maps)
+Test 1:
+A hallway with one room on either side. Start state = (19,10,pi/2)
+Test 2:
+A circlular room with no distinguishing features. Start state = (50,50,0)
+Test 3:
+Mutliple separate rooms. Start state = (3,5,3pi/2).
+Test 4:
+A hallway with rooms on one side. Start state = (60, 10, pi/2)
+Test 5:
+A hallway with rooms on one side. Start state = (70, 180, 3pi/2)
+Test CIT1:
+The CIT, Start state = (600, 400, 3.7)
+Test CIT2:
+The CIT, Start state = (600, 400, 3.7). (Movements are larger, so things are more noisy, but visualization is nice)
